@@ -17,11 +17,6 @@ struct Command{
 	std::string adressVariable;
 };
 
-struct StaticVars {
-	std::string fileClassName;
-	unsigned int baseStaticAddrss;
-};
-
 std::unordered_map<std::string, int> commandTable = {
 	{"add", C_ARITHMETIC},
 	{"sub", C_ARITHMETIC},

@@ -9,8 +9,6 @@ private:
     std::vector < std::string > outputStrings;
     unsigned long commandNum = 0;
     unsigned long labelNum = 0;
-    std::vector <struct StaticVars> staticData;
-    unsigned int staticCounter = 16;
 public:
     CodeWriter(std::string outFilename, std::vector<struct Command>* commandList) {
         this->commands = *commandList;
@@ -453,14 +451,6 @@ public:
     }
 
     void WriteFunction(struct Command com) {
-        //if (com.command[1].compare("Sys.init") == 0) {
-        //    //Writes the bootstrap code
-        //    //SP = 256 ou 261?
-        //    outputStrings.push_back("@261");
-        //    outputStrings.push_back("D=A");
-        //    outputStrings.push_back("@SP");
-        //    outputStrings.push_back("M=D");
-        //}
         outputStrings.push_back("(" + com.command[1] + ")");
 
 
